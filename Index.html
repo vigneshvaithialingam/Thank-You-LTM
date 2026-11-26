@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14303a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Thank you, LTM">
+<meta property="og:description" content="A farewell note of thanks to the people I worked with at LTM.">
+<title>Thank you, LTM</title>
+<style>
+:root{
+  --bg:#eef3f1; --card:#ffffff; --ink:#14303a; --muted:#546a70; --line:#d3dedb;
+  --gold:#f2b134; --shadow:0 1px 0 rgba(20,48,58,.06);
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0f2127; --card:#173038; --ink:#eaf2ef; --muted:#9db3b6; --line:#27434b; --shadow:none;}
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+.lock{overflow:hidden}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.55;padding:clamp(20px,5vw,56px)}
+.wrap{max-width:1000px;margin:0 auto}
+.sans{font-family:"Trebuchet MS",system-ui,sans-serif}
+header{margin-bottom:28px;max-width:680px}
+h1{font-size:clamp(2.4rem,7vw,4.2rem);line-height:1.02;margin:0 0 14px;letter-spacing:-.02em}
+header p{font:1.05rem/1.6 "Trebuchet MS",system-ui,sans-serif;color:var(--muted);margin:0}
+.timeline{list-style:none;margin:0 0 34px;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;font-family:"Trebuchet MS",system-ui,sans-serif}
+.timeline li{position:relative;padding:18px 10px 0 0;font-size:.9rem;color:var(--muted)}
+.timeline li::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--line)}
+.timeline li::after{content:"";position:absolute;top:-5px;left:0;width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid var(--bg)}
+.timeline b{display:block;color:var(--ink);font-size:1rem}
+@media (max-width:560px){.timeline{grid-template-columns:1fr 1fr;row-gap:18px}}
+.hint{font:.9rem "Trebuchet MS",system-ui,sans-serif;color:var(--muted);margin:0 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.card{all:unset;box-sizing:border-box;cursor:pointer;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--shadow);transition:transform .15s,border-color .15s}
+@media (hover:hover){.card:hover{transform:translateY(-3px);border-color:var(--gold)}}
+.card:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.avatar{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font:700 1.15rem "Trebuchet MS",sans-serif;color:#fff;overflow:hidden;flex:none}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.card .name{font-size:1.2rem;font-weight:700;line-height:1.25}
+.card .role{font:.9rem "Trebuchet MS",system-ui,sans-serif;color:var(--muted)}
+.card .more{margin-top:auto;font:.85rem "Trebuchet MS",system-ui,sans-serif;font-weight:700;border-bottom:2px solid var(--gold);align-self:flex-start}
+dialog{border:none;border-radius:18px;padding:0;max-width:min(580px,92vw);width:100%;background:var(--card);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.35);max-height:88vh;max-height:88dvh}
+dialog::backdrop{background:rgba(10,25,30,.6)}
+dialog[open]{display:flex;flex-direction:column;animation:pop .22s ease-out}
+@keyframes sheet{from{transform:translateY(100%)}to{transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.96) translateY(8px)}to{opacity:1;transform:none}}
+.d-top{display:flex;gap:16px;align-items:center;padding:24px 56px 8px 24px}
+.d-top .avatar{width:72px;height:72px;font-size:1.5rem}
+.d-top h2{margin:0;font-size:1.5rem;line-height:1.15}
+.d-top .role{font:.95rem "Trebuchet MS",system-ui,sans-serif;color:var(--muted);margin-top:2px}
+.d-body{overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:8px 24px 24px;font:1rem/1.65 "Trebuchet MS",system-ui,sans-serif}
+.d-body h3{font:700 .95rem "Trebuchet MS",sans-serif;margin:18px 0 4px}
+.d-body p{margin:0}
+.msg{border-left:4px solid var(--gold);padding-left:14px;font:italic 1.15rem/1.55 Georgia,serif}
+.close{position:absolute;top:10px;right:10px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1.2rem;cursor:pointer}
+.close:focus-visible{outline:3px solid var(--gold)}
+footer{margin-top:44px;padding-top:24px;border-top:1px solid var(--line);font-family:"Trebuchet MS",system-ui,sans-serif}
+footer p{margin:0 0 14px;color:var(--muted)}
+.btn{display:inline-block;background:var(--gold);color:#14303a;font-weight:700;text-decoration:none;padding:12px 22px;border-radius:999px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--gold);padding:10px 20px}
+.btn:focus-visible,.btn:hover{outline:3px solid var(--ink);outline-offset:2px}
+.sign{font:1.4rem Georgia,serif;color:var(--ink);margin-top:22px}
+@media (max-width:560px){
+  body{padding:max(18px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(28px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+  h1{font-size:2.4rem}
+  header p{font-size:1rem}
+  .grid{grid-template-columns:1fr;gap:10px}
+  .card{flex-direction:row;align-items:center;gap:14px;padding:14px;min-height:76px}
+  .card .avatar{width:48px;height:48px;font-size:1rem}
+  .card .more{display:none}
+  .card::after{content:"\203A";margin-left:auto;font-size:1.8rem;line-height:1;color:var(--muted)}
+  dialog{margin:auto 0 0;max-width:100%;border-radius:20px 20px 0 0;max-height:90vh;max-height:90dvh;padding-bottom:env(safe-area-inset-bottom)}
+  dialog[open]{animation:sheet .26s ease-out}
+  .d-top{padding:22px 60px 6px 18px}
+  .d-top .avatar{width:60px;height:60px;font-size:1.25rem}
+  .d-body{padding:6px 18px 22px}
+  .btn{flex:1 1 100%;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1 id="title">Thank you, LTM.</h1>
+    <p id="intro"></p>
+  </header>
+
+  <ol class="timeline" id="timeline"></ol>
+
+  <p class="hint">Select a name to read my note.</p>
+  <div class="grid" id="grid"></div>
+
+  <footer>
+    <p id="footnote"></p>
+    <div class="btns">
+      <a class="btn" id="li" target="_blank" rel="noopener noreferrer">Stay in touch on LinkedIn</a>
+      <a class="btn alt" id="wa" target="_blank" rel="noopener noreferrer">Message me on WhatsApp</a>
+    </div>
+    <div class="sign" id="sign"></div>
+  </footer>
+</div>
+
+<dialog id="dlg" aria-labelledby="d-name">
+  <button class="close" id="close" aria-label="Close">&times;</button>
+  <div class="d-top">
+    <div class="avatar" id="d-avatar"></div>
+    <div><h2 id="d-name"></h2><div class="role" id="d-role"></div></div>
+  </div>
+  <div class="d-body" id="d-body">
+    <p class="msg" id="d-message"></p>
+    <h3>What you meant to me</h3><p id="d-thanks"></p>
+    <div id="d-extra"></div>
+  </div>
+</dialog>
+
+<script>
+/* ===== EDIT THIS SECTION ===== */
+const PAGE = {
+  title: "Thank you, LTM.",
+  intro: "I began my career at Larsen & Toubro Infotech on 29 March 2022. The company later became LTIMindtree and is now LTM, but what made it feel like home was the people. My last working day is 27 November 2026, and I would like to say a heartfelt thank you. Please open a card to read my note.",
+  footnote: "This is not a goodbye. Let’s stay connected.",
+  signoff: "With gratitude, Vignesh Vaithialingam",
+  linkedin: "https://www.linkedin.com/in/vigneshvaithialingam/",
+  whatsapp: "https://wa.me/918220255664"   // wa.me needs the country code (91 for India), no + or spaces
+};
+
+const TIMELINE = [
+  ["Mar 2022", "Larsen & Toubro Infotech"],
+  ["After the merger", "LTIMindtree"],
+  ["Rebranded", "LTM"],
+  ["27 Nov 2026", "My last working day"]
+];
+
+/* One entry per person. photo and initials are optional.
+   To add someone, copy a block, paste it below, and edit the text. */
+const PEOPLE = [
+  { name:"Kameshwaran Parthiban", role:"My first manager · A guru in corporate connections", photo:"",
+    message:"Thank you for showing us how the corporate world works.",
+    thanks:"You taught us how to conduct ourselves in a corporate environment and how to build meaningful connections. You also welcomed us into the Larsen & Toubro Infotech family. Everything I carried forward began with your guidance, and I am truly grateful.",
+    extra:[] },
+  { name:"Parthiban Deivasigamani", role:"My first ABAP mentor · Always a guide", photo:"",
+    message:"Thank you for your patience with every question I asked, even the silly ones.",
+    thanks:"You are the person behind my technical foundation. You always shared valuable insights, and you showed me how to train and support juniors. I am grateful for all of it.",
+    extra:[] },
+  { name:"AnandKumar NC", role:"My first Key Delivery Manager · Associate Vice President", photo:"",
+    message:"Thank you for giving me the opportunity to grow in the SAP world.",
+    thanks:"You gave me the chance to thrive, improve and grow in SAP, and I will always be thankful for that.",
+    extra:[["I still remember","The question you asked my Team Lead: “Is he capable of handling things alone?”"]] },
+  { name:"Mandar Sathe", role:"My first Team Lead · The man who trusted me", photo:"",
+    message:"Thank you for seeing my potential before I did.",
+    thanks:"You recognised my inner fire and guided me to work independently. You said yes to the Key Delivery Manager when I had been your trainee for only 15 days. Your trust has shaped the way I work, and I am deeply thankful.",
+    extra:[] },
+  { name:"Partha Sarathi Sahoo", role:"My first mentor · Always a best friend", photo:"",
+    message:"Thank you for walking with me through LTM and beyond.",
+    thanks:"You were beside me throughout my time at LTM, and even now you continue to mentor me towards the best of my SAP career. I am lucky to call you both a mentor and a dear friend.",
+    extra:[["I still remember","Our first call, and the Sunday afternoon when you taught me how LSMW works. It was my very first lesson."]] },
+  { name:"Sriram B", role:"My first Implementation Lead", photo:"",
+    message:"Thank you for your passion for learning.",
+    thanks:"You put your heart into learning, took on new challenges willingly and always stayed one step ahead. You inspired all of us to do the same.",
+    extra:[["Thank you also for","The first gift of my life. It is a memory I will treasure forever."]] },
+  { name:"Rajeshkumar Veeraraghavan", role:"Basis Expert · My go-to person", photo:"",
+    message:"Thank you for always being the person I could turn to.",
+    thanks:"You were my go-to person for every administrative activity inside SAP. Thank you also for making sure I got to know the right people across the organisation. I am truly grateful.",
+    extra:[] },
+  { name:"Chidambaram Muthukumarasamy", role:"Solution Guru · SCM", photo:"",
+    message:"Thank you for being someone I could rely on, any time, any day.",
+    thanks:"You guided me and kept me on the right track in my SAP career. Whenever I was in trouble, I knew I could count on you, and I am deeply grateful.",
+    extra:[] },
+  { name:"J. Sathianarayanan", role:"Solution Architect · FI", photo:"",
+    message:"Thank you for being my go-to person for SAP Finance and so much more.",
+    thanks:"You helped me with SAP Finance solutioning and my other SAP doubts, and you kept me updated on what is happening in SAP and what is coming next. I am truly grateful.",
+    extra:[] },
+  { name:"Srinivasan Rajagopal", role:"Solution Guru · Planning & Maintenance · My personal coach", photo:"",
+    message:"Thank you for being honest with me, and for being my coach.",
+    thanks:"You are my personal coach and my go-to person for every issue. You told me the facts plainly, taught me to look at life from a better perspective, and took the effort to help me understand my mistakes. I am truly thankful.",
+    extra:[] },
+  { name:"The ALNG Implementation Team", initials:"AL", role:"Implementation team", photo:"",
+    message:"Thank you for treating every one of us like family.",
+    thanks:"Every member of the team stood by the others and never let anyone down. It was a joy to work with you, and I will miss it.",
+    extra:[] },
+  { name:"The Carrier Team", initials:"CR", role:"Rollouts & Carveouts", photo:"",
+    message:"Thank you for being my Pune family.",
+    thanks:"Our team was reshuffled and streamlined, and once we got to know one another, we delivered successfully, even ahead of time. You will always be my Pune family.",
+    extra:[] }
+];
+/* ===== END EDIT SECTION ===== */
+
+const COLORS = ["#1f6f78","#b5542f","#5a4e9c","#2f7d4f","#a0388a","#3a5ea8","#8a6a12"];
+const $ = id => document.getElementById(id);
+function el(tag, text, cls){const e=document.createElement(tag); if(cls)e.className=cls; if(text!=null)e.textContent=text; return e;}
+function initials(p){return p.initials || p.name.trim().split(/\s+/).slice(0,2).map(w=>w[0]).join("").toUpperCase();}
+function fillAvatar(box,p,i){
+  box.style.background = COLORS[i % COLORS.length];
+  box.textContent = "";
+  if(p.photo){
+    const img = new Image(); img.alt = ""; img.src = p.photo;
+    img.onerror = () => { img.remove(); box.textContent = initials(p); };
+    box.appendChild(img);
+  } else box.textContent = initials(p);
+}
+
+document.title = PAGE.title;
+$("title").textContent = PAGE.title;
+$("intro").textContent = PAGE.intro;
+$("footnote").textContent = PAGE.footnote;
+$("sign").textContent = PAGE.signoff;
+$("li").href = PAGE.linkedin;
+$("wa").href = PAGE.whatsapp;
+
+TIMELINE.forEach(([when,what])=>{
+  const li = document.createElement("li");
+  li.append(el("b",when), document.createTextNode(what));
+  $("timeline").appendChild(li);
+});
+
+const dlg = $("dlg");
+PEOPLE.forEach((p,i)=>{
+  const b = el("button",null,"card");
+  b.type = "button";
+  const av = el("div",null,"avatar"); fillAvatar(av,p,i);
+  const txt = el("div",null,"txt");
+  txt.append(el("div",p.name,"name"), el("div",p.role,"role"));
+  b.append(av, txt, el("span","Read my note","more"));
+  b.addEventListener("click",()=>openCard(p,i));
+  $("grid").appendChild(b);
+});
+
+function openCard(p,i){
+  fillAvatar($("d-avatar"),p,i);
+  $("d-name").textContent = p.name;
+  $("d-role").textContent = p.role;
+  $("d-message").textContent = p.message;
+  $("d-thanks").textContent = p.thanks;
+  const ex = $("d-extra"); ex.textContent = "";
+  (p.extra||[]).forEach(([h,t])=>{ex.append(el("h3",h), el("p",t));});
+  if(dlg.showModal) dlg.showModal(); else dlg.setAttribute("open","");
+  document.body.classList.add("lock");
+  $("d-body").scrollTop = 0;
+}
+$("close").addEventListener("click",()=>dlg.close());
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close();});
+dlg.addEventListener("close",()=>document.body.classList.remove("lock"));
+</script>
+</body>
+</html>
