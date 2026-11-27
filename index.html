@@ -3,24 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#14303a">
+<meta name="theme-color" content="#b9e0f7">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Thank you, LTM">
 <meta property="og:description" content="A farewell note of thanks to the people I worked with at LTM.">
 <title>Thank you, LTM</title>
 <style>
 :root{
-  --bg:#eef3f1; --card:#ffffff; --ink:#14303a; --muted:#546a70; --line:#d3dedb;
-  --gold:#f2b134; --shadow:0 1px 0 rgba(20,48,58,.06);
+  --bg-solid:#d9effb;
+  --bg:linear-gradient(180deg,#b9e0f7 0%,#d9effb 38%,#eaf6fd 100%);
+  --card:#ffffff; --ink:#0f2a43; --muted:#3f5b78; --line:#b3d5ea;
+  --gold:#f2b134; --shadow:0 1px 2px rgba(15,42,67,.08);
 }
 @media (prefers-color-scheme:dark){
-  :root{--bg:#0f2127; --card:#173038; --ink:#eaf2ef; --muted:#9db3b6; --line:#27434b; --shadow:none;}
+  :root{--bg-solid:#0b2236; --bg:linear-gradient(180deg,#0a1f33 0%,#0e2b45 100%); --card:#143452; --ink:#eaf4fb; --muted:#a3bfd6; --line:#26496b; --shadow:none;}
 }
 *{box-sizing:border-box}
 html,body{margin:0}
 html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
 .lock{overflow:hidden}
-body{background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.55;padding:clamp(20px,5vw,56px)}
+html{background:var(--bg-solid)}
+body{background:var(--bg);min-height:100vh;color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.55;padding:clamp(20px,5vw,56px)}
 .wrap{max-width:1000px;margin:0 auto}
 .sans{font-family:"Trebuchet MS",system-ui,sans-serif}
 header{margin-bottom:28px;max-width:680px}
@@ -29,9 +32,13 @@ header p{font:1.05rem/1.6 "Trebuchet MS",system-ui,sans-serif;color:var(--muted)
 .timeline{list-style:none;margin:0 0 34px;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;font-family:"Trebuchet MS",system-ui,sans-serif}
 .timeline li{position:relative;padding:18px 10px 0 0;font-size:.9rem;color:var(--muted)}
 .timeline li::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--line)}
-.timeline li::after{content:"";position:absolute;top:-5px;left:0;width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid var(--bg)}
+.timeline li::after{content:"";position:absolute;top:-5px;left:0;width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid var(--bg-solid)}
 .timeline b{display:block;color:var(--ink);font-size:1rem}
 @media (max-width:560px){.timeline{grid-template-columns:1fr 1fr;row-gap:18px}}
+.sec{margin-top:36px}
+.hint+.sec{margin-top:8px}
+.sec h2{font-size:1.7rem;line-height:1.15;margin:0 0 4px;letter-spacing:-.01em}
+.sec .sub{font:.95rem "Trebuchet MS",system-ui,sans-serif;color:var(--muted);margin:0 0 16px}
 .hint{font:.9rem "Trebuchet MS",system-ui,sans-serif;color:var(--muted);margin:0 0 16px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
 .card{all:unset;box-sizing:border-box;cursor:pointer;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--shadow);transition:transform .15s,border-color .15s}
@@ -43,7 +50,7 @@ header p{font:1.05rem/1.6 "Trebuchet MS",system-ui,sans-serif;color:var(--muted)
 .card .role{font:.9rem "Trebuchet MS",system-ui,sans-serif;color:var(--muted)}
 .card .more{margin-top:auto;font:.85rem "Trebuchet MS",system-ui,sans-serif;font-weight:700;border-bottom:2px solid var(--gold);align-self:flex-start}
 dialog{border:none;border-radius:18px;padding:0;max-width:min(580px,92vw);width:100%;background:var(--card);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.35);max-height:88vh;max-height:88dvh}
-dialog::backdrop{background:rgba(10,25,30,.6)}
+dialog::backdrop{background:rgba(8,28,48,.6)}
 dialog[open]{display:flex;flex-direction:column;animation:pop .22s ease-out}
 @keyframes sheet{from{transform:translateY(100%)}to{transform:none}}
 @keyframes pop{from{opacity:0;transform:scale(.96) translateY(8px)}to{opacity:1;transform:none}}
@@ -59,7 +66,7 @@ dialog[open]{display:flex;flex-direction:column;animation:pop .22s ease-out}
 .close:focus-visible{outline:3px solid var(--gold)}
 footer{margin-top:44px;padding-top:24px;border-top:1px solid var(--line);font-family:"Trebuchet MS",system-ui,sans-serif}
 footer p{margin:0 0 14px;color:var(--muted)}
-.btn{display:inline-block;background:var(--gold);color:#14303a;font-weight:700;text-decoration:none;padding:12px 22px;border-radius:999px}
+.btn{display:inline-block;background:var(--gold);color:#0f2a43;font-weight:700;text-decoration:none;padding:12px 22px;border-radius:999px}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
 .btn.alt{background:transparent;color:var(--ink);border:2px solid var(--gold);padding:10px 20px}
 .btn:focus-visible,.btn:hover{outline:3px solid var(--ink);outline-offset:2px}
@@ -93,7 +100,16 @@ footer p{margin:0 0 14px;color:var(--muted)}
   <ol class="timeline" id="timeline"></ol>
 
   <p class="hint">Select a name to read my note.</p>
-  <div class="grid" id="grid"></div>
+  <section class="sec">
+    <h2>My Gurus</h2>
+    <p class="sub">The people who taught, guided and trusted me.</p>
+    <div class="grid" id="grid"></div>
+  </section>
+  <section class="sec">
+    <h2>Projects</h2>
+    <p class="sub">The teams I was lucky to work with.</p>
+    <div class="grid" id="grid2"></div>
+  </section>
 
   <footer>
     <p id="footnote"></p>
@@ -179,6 +195,14 @@ const PEOPLE = [
     message:"Thank you for being honest with me, and for being my coach.",
     thanks:"You are my personal coach and my go-to person for every issue. You told me the facts plainly, taught me to look at life from a better perspective, and took the effort to help me understand my mistakes. I am truly thankful.",
     extra:[] },
+  { name:"Ganesh Swaminathan", role:"Solutioning · PP", photo:"",
+    message:"Thank you for your insights and for pushing me to achieve more.",
+    thanks:"You share your insights about the market and motivate me to do something good and to achieve more. I am truly grateful.",
+    extra:[["I still remember","The early days at the BorgWarner client, when we worked together in the war room. That Ganesh was different from the Ganesh I know today."]] }
+];
+
+/* Teams and projects. Copy a block to add one. */
+const PROJECTS = [
   { name:"The ALNG Implementation Team", initials:"AL", role:"Implementation team", photo:"",
     message:"Thank you for treating every one of us like family.",
     thanks:"Every member of the team stood by the others and never let anyone down. It was a joy to work with you, and I will miss it.",
@@ -190,7 +214,7 @@ const PEOPLE = [
 ];
 /* ===== END EDIT SECTION ===== */
 
-const COLORS = ["#1f6f78","#b5542f","#5a4e9c","#2f7d4f","#a0388a","#3a5ea8","#8a6a12"];
+const COLORS = ["#1d6fa5","#c2562d","#5a4e9c","#237a5a","#a0388a","#2f5fb3","#8a6a12"];
 const $ = id => document.getElementById(id);
 function el(tag, text, cls){const e=document.createElement(tag); if(cls)e.className=cls; if(text!=null)e.textContent=text; return e;}
 function initials(p){return p.initials || p.name.trim().split(/\s+/).slice(0,2).map(w=>w[0]).join("").toUpperCase();}
@@ -219,16 +243,21 @@ TIMELINE.forEach(([when,what])=>{
 });
 
 const dlg = $("dlg");
-PEOPLE.forEach((p,i)=>{
-  const b = el("button",null,"card");
-  b.type = "button";
-  const av = el("div",null,"avatar"); fillAvatar(av,p,i);
-  const txt = el("div",null,"txt");
-  txt.append(el("div",p.name,"name"), el("div",p.role,"role"));
-  b.append(av, txt, el("span","Read my note","more"));
-  b.addEventListener("click",()=>openCard(p,i));
-  $("grid").appendChild(b);
-});
+function render(list, gridId, offset){
+  list.forEach((p,k)=>{
+    const i = offset + k;
+    const b = el("button",null,"card");
+    b.type = "button";
+    const av = el("div",null,"avatar"); fillAvatar(av,p,i);
+    const txt = el("div",null,"txt");
+    txt.append(el("div",p.name,"name"), el("div",p.role,"role"));
+    b.append(av, txt, el("span","Read my note","more"));
+    b.addEventListener("click",()=>openCard(p,i));
+    $(gridId).appendChild(b);
+  });
+}
+render(PEOPLE, "grid", 0);
+render(PROJECTS, "grid2", PEOPLE.length);
 
 function openCard(p,i){
   fillAvatar($("d-avatar"),p,i);
