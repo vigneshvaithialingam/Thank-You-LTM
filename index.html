@@ -3,27 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#b9e0f7">
+<meta name="theme-color" content="#2e3192">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Thank you, LTM">
 <meta property="og:description" content="A farewell note of thanks to the people I worked with at LTM.">
 <title>Thank you, LTM</title>
 <style>
 :root{
-  --bg-solid:#d9effb;
-  --bg:linear-gradient(180deg,#b9e0f7 0%,#d9effb 38%,#eaf6fd 100%);
-  --card:#ffffff; --ink:#0f2a43; --muted:#3f5b78; --line:#b3d5ea;
-  --gold:#f2b134; --shadow:0 1px 2px rgba(15,42,67,.08);
+  --bg-solid:#2e3192;
+  --bg:radial-gradient(1200px 600px at 15% -5%,#4a52d6 0%,rgba(74,82,214,0) 60%),radial-gradient(900px 500px at 95% 5%,#4549c9 0%,rgba(69,73,201,0) 55%),linear-gradient(180deg,#2e3192 0%,#262a80 55%,#1d2066 100%);
+  --card:#ffffff; --ink:#ffffff; --muted:#d6d9ff; --line:#6b70d9;
+  --gold:#f2b134; --shadow:0 4px 14px rgba(10,12,60,.35);
 }
-@media (prefers-color-scheme:dark){
-  :root{--bg-solid:#0b2236; --bg:linear-gradient(180deg,#0a1f33 0%,#0e2b45 100%); --card:#143452; --ink:#eaf4fb; --muted:#a3bfd6; --line:#26496b; --shadow:none;}
-}
+.card,dialog{--ink:#1d2066; --muted:#4a4f8f; --line:#c9ccf2}
+.card{color:#1d2066!important}
+.card:hover{box-shadow:0 8px 24px rgba(10,12,60,.45)}
+dialog::backdrop{background:rgba(14,16,70,.7)!important}
+footer a{color:#fff}
 *{box-sizing:border-box}
 html,body{margin:0}
 html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
 .lock{overflow:hidden}
 html{background:var(--bg-solid)}
-body{background:var(--bg);min-height:100vh;color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.55;padding:clamp(20px,5vw,56px)}
+body{background:var(--bg);background-attachment:fixed;min-height:100vh;color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.55;padding:clamp(20px,5vw,56px)}
 .wrap{max-width:1000px;margin:0 auto}
 .sans{font-family:"Trebuchet MS",system-ui,sans-serif}
 header{margin-bottom:28px;max-width:680px}
@@ -88,7 +90,7 @@ footer p{margin:0 0 14px;color:var(--muted)}
   .btn{flex:1 1 100%;text-align:center}
 }
 @media (prefers-reduced-motion:reduce){*:not(.heart):not(.mini-heart){animation:none!important;transition:none!important}}
-.special-link{display:inline-block;margin:0 0 18px;font:700 .95rem "Trebuchet MS",system-ui,sans-serif;color:var(--ink);text-decoration:none;background:var(--gold);padding:8px 16px;border-radius:999px;box-shadow:0 0 0 4px rgba(242,177,52,.25)}
+.special-link{display:inline-block;margin:0 0 18px;font:700 .95rem "Trebuchet MS",system-ui,sans-serif;color:#1d2066;text-decoration:none;background:var(--gold);padding:8px 16px;border-radius:999px;box-shadow:0 0 0 4px rgba(242,177,52,.25)}
 .special-note{position:relative;margin-top:48px;padding:clamp(26px,5vw,44px);border-radius:22px;background:linear-gradient(135deg,#fff7e3 0%,#ffe9b8 100%);border:2px solid var(--gold);box-shadow:0 0 0 6px rgba(242,177,52,.18),0 18px 50px rgba(15,42,67,.18);color:#0f2a43;text-align:center;animation:glow 3.5s ease-in-out infinite alternate}
 @keyframes glow{from{box-shadow:0 0 0 6px rgba(242,177,52,.18),0 18px 50px rgba(15,42,67,.18)}to{box-shadow:0 0 0 10px rgba(242,177,52,.32),0 18px 60px rgba(242,177,52,.35)}}
 .special-note .heart{display:inline-block;font-size:3rem;line-height:1;margin-bottom:10px;color:#e0245e;text-shadow:0 0 18px rgba(224,36,94,.45);animation:breathe 1.6s ease-in-out infinite;transform-origin:center}
