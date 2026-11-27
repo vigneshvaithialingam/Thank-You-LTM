@@ -99,25 +99,30 @@ footer p{margin:0 0 14px;color:var(--muted)}
 
   <ol class="timeline" id="timeline"></ol>
 
-  <p class="hint">Select a name to read my note.</p>
+  <p class="hint">Select a name to read my personal note.</p>
   <section class="sec">
     <h2>My Gurus</h2>
-    <p class="sub">The people who taught, guided and trusted me.</p>
+    <p class="sub">The people who taught me, guided me and believed in me.</p>
     <div class="grid" id="grid"></div>
   </section>
   <section class="sec">
     <h2>Managers</h2>
-    <p class="sub">The leaders who guided and supported my work.</p>
+    <p class="sub">The leaders who stood by me and supported my growth.</p>
     <div class="grid" id="gridM"></div>
   </section>
   <section class="sec">
     <h2>Colleagues</h2>
-    <p class="sub">The friends who shared the journey with me.</p>
+    <p class="sub">The friends who made every day of this journey memorable.</p>
     <div class="grid" id="gridC"></div>
   </section>
   <section class="sec">
+    <h2>Special One</h2>
+    <p class="sub">Beyond a friend, beyond a colleague.</p>
+    <div class="grid" id="gridS"></div>
+  </section>
+  <section class="sec">
     <h2>Projects</h2>
-    <p class="sub">The teams I was lucky to work with.</p>
+    <p class="sub">The teams I was fortunate to be part of.</p>
     <div class="grid" id="grid2"></div>
   </section>
 
@@ -148,8 +153,8 @@ footer p{margin:0 0 14px;color:var(--muted)}
 /* ===== EDIT THIS SECTION ===== */
 const PAGE = {
   title: "Thank you, LTM.",
-  intro: "I began my career at Larsen & Toubro Infotech on 29 March 2022. The company later became LTIMindtree and is now LTM, but what made it feel like home was the people. My last working day is 27 November 2026, and I would like to say a heartfelt thank you. Please open a card to read my note.",
-  footnote: "This is not a goodbye. Let’s stay connected.",
+  intro: "My journey began at Larsen & Toubro Infotech on 29 March 2022. Over the years, the name changed from LTI to LTIMindtree and now LTM, but what truly made it feel like home was the people. As I close this chapter on 27 November 2026, I want to say a heartfelt thank you to everyone who made it so special. Please open a card to read my note to you.",
+  footnote: "This is not goodbye, just see you later. Let’s stay connected.",
   signoff: "With gratitude, Vignesh Vaithialingam",
   linkedin: "https://www.linkedin.com/in/vigneshvaithialingam/",
   whatsapp: "https://wa.me/918220255664"   // wa.me needs the country code (91 for India), no + or spaces
@@ -166,76 +171,131 @@ const TIMELINE = [
    To add someone, copy a block, paste it below, and edit the text. */
 const PEOPLE = [
   { name:"Kameshwaran Parthiban", role:"My first manager · A guru in corporate connections", photo:"",
-    message:"Thank you for showing us how the corporate world works.",
-    thanks:"You taught us how to conduct ourselves in a corporate environment and how to build meaningful connections. You also welcomed us into the Larsen & Toubro Infotech family. Everything I carried forward began with your guidance, and I am truly grateful.",
+    message:"Thank you for opening the door to the corporate world for us.",
+    thanks:"You taught us how to carry ourselves in a professional environment and how to build meaningful, lasting connections. You welcomed us warmly into the Larsen & Toubro Infotech family, and everything I have built since then began with your guidance. I am truly grateful.",
     extra:[] },
   { name:"Parthiban Deivasigamani", role:"My first ABAP mentor · Always a guide", photo:"",
-    message:"Thank you for your patience with every question I asked, even the silly ones.",
-    thanks:"You are the person behind my technical foundation. You always shared valuable insights, and you showed me how to train and support juniors. I am grateful for all of it.",
+    message:"Thank you for patiently answering every question I asked, even the silly ones.",
+    thanks:"You laid the foundation of my technical knowledge. You generously shared your insights, and by example, you showed me how to train and support juniors. Whatever I pass on to others today carries a part of what you taught me. Thank you for everything.",
     extra:[] },
   { name:"AnandKumar NC", role:"My first Key Delivery Manager · Associate Vice President", photo:"",
-    message:"Thank you for giving me the opportunity to grow in the SAP world.",
-    thanks:"You gave me the chance to thrive, improve and grow in SAP, and I will always be thankful for that.",
-    extra:[["I still remember","The question you asked my Team Lead: “Is he capable of handling things alone?”"]] },
+    message:"Thank you for opening the door to my SAP career.",
+    thanks:"You gave me the opportunity to learn, grow and thrive in the world of SAP. That one chance changed the direction of my career, and I will always be thankful to you for it.",
+    extra:[["I still remember","The question you asked my Team Lead: “Is he capable of handling things on his own?”"]] },
   { name:"Mandar Sathe", role:"My first Team Lead · The man who trusted me", photo:"",
     message:"Thank you for seeing my potential before I did.",
-    thanks:"You recognised my inner fire and guided me to work independently. You said yes to the Key Delivery Manager when I had been your trainee for only 15 days. Your trust has shaped the way I work, and I am deeply thankful.",
+    thanks:"You recognised the fire in me and encouraged me to work independently. When I had been your trainee for just 15 days, you said yes to the Key Delivery Manager on my behalf. That trust shaped the professional I am today, and I am deeply thankful.",
     extra:[] },
   { name:"Partha Sarathi Sahoo", role:"My first mentor · Always a best friend", photo:"",
-    message:"Thank you for walking with me through LTM and beyond.",
-    thanks:"You were beside me throughout my time at LTM, and even now you continue to mentor me towards the best of my SAP career. I am lucky to call you both a mentor and a dear friend.",
-    extra:[["I still remember","Our first call, and the Sunday afternoon when you taught me how LSMW works. It was my very first lesson."]] },
+    message:"Thank you for walking beside me, at LTM and beyond.",
+    thanks:"You stood by me throughout my time at LTM, and you continue to guide me towards the best version of my SAP career. I feel truly fortunate to call you both my mentor and a dear friend.",
+    extra:[["I still remember","Our very first call, and that Sunday afternoon when you patiently taught me how LSMW works. It was my first real SAP lesson."]] },
   { name:"Sriram B", role:"My first Implementation Lead", photo:"",
-    message:"Thank you for your passion for learning.",
-    thanks:"You put your heart into learning, took on new challenges willingly and always stayed one step ahead. You inspired all of us to do the same.",
-    extra:[["Thank you also for","The first gift of my life. It is a memory I will treasure forever."]] },
+    message:"Thank you for showing me what a true passion for learning looks like.",
+    thanks:"You put your heart into everything you learned, embraced every new challenge with enthusiasm and always stayed one step ahead. You inspired all of us to keep learning and keep growing.",
+    extra:[["Thank you also for","The very first gift of my life. It is a memory I will cherish forever."]] },
   { name:"Rajeshkumar Veeraraghavan", role:"Basis Expert · My go-to person", photo:"",
     message:"Thank you for always being the person I could turn to.",
-    thanks:"You were my go-to person for every administrative activity inside SAP. Thank you also for making sure I got to know the right people across the organisation. I am truly grateful.",
+    thanks:"You were my go-to person for every administrative task in SAP, and you always helped without hesitation. Thank you also for introducing me to the right people across the organisation. Those connections have meant a great deal to me.",
     extra:[] },
   { name:"Chidambaram Muthukumarasamy", role:"Solution Guru · SCM", photo:"",
-    message:"Thank you for being someone I could rely on, any time, any day.",
-    thanks:"You guided me and kept me on the right track in my SAP career. Whenever I was in trouble, I knew I could count on you, and I am deeply grateful.",
+    message:"Thank you for being someone I could rely on, any day, any time.",
+    thanks:"You guided me and kept me on the right path in my SAP career. Whenever I found myself in trouble, I knew I could count on you without a second thought. I am deeply grateful for your support.",
     extra:[] },
   { name:"J. Sathianarayanan", role:"Solution Architect · FI", photo:"",
-    message:"Thank you for being my go-to person for SAP Finance and so much more.",
-    thanks:"You helped me with SAP Finance solutioning and my other SAP doubts, and you kept me updated on what is happening in SAP and what is coming next. I am truly grateful.",
+    message:"Thank you for being my go-to person for SAP Finance, and so much more.",
+    thanks:"You helped me with SAP Finance solutioning and patiently cleared every SAP doubt I brought to you. You also kept me informed about what is happening in the SAP world and what lies ahead. I am truly grateful for your generosity.",
     extra:[] },
   { name:"Srinivasan Rajagopal", role:"Solution Guru · Planning & Maintenance · My personal coach", photo:"",
-    message:"Thank you for being honest with me, and for being my coach.",
-    thanks:"You are my personal coach and my go-to person for every issue. You told me the facts plainly, taught me to look at life from a better perspective, and took the effort to help me understand my mistakes. I am truly thankful.",
+    message:"Thank you for your honesty, and for being my coach.",
+    thanks:"You are my personal coach and my go-to person for every challenge. You always told me the truth plainly, taught me to see life from a better perspective, and took the time to help me understand and learn from my mistakes. I am truly thankful.",
     extra:[] },
   { name:"Ganesh Swaminathan", role:"Solution Guru · PP", photo:"",
-    message:"Thank you for your insights and for pushing me to achieve more.",
-    thanks:"You share your insights about the market and motivate me to do something good and to achieve more. I am truly grateful.",
-    extra:[["I still remember","The early days at the BorgWarner client, when we worked together in the war room. That Ganesh was different from the Ganesh I know today."]] }
+    message:"Thank you for your insights, and for pushing me to aim higher.",
+    thanks:"You generously share your insights about the market and constantly motivate me to do meaningful work and achieve more. Your encouragement means a lot to me, and I am truly grateful.",
+    extra:[["I still remember","The early days at BorgWarner, working side by side in the war room. The Ganesh I met there was very different from the Ganesh I know today, and I value both."]] }
 ];
 
 /* Managers. Copy a block to add one. */
 const MANAGERS = [
-  { name:"Chandrasekar Raman", role:"Cool Manager", photo:"",
-    message:"Thank you for being such a cool manager.",
-    thanks:"It was a pleasure working with you, and I am grateful for your support as my manager.",
+  { name:"Chandrasekar Raman", role:"The cool-headed manager", photo:"",
+    message:"Thank you for staying calm through every storm.",
+    thanks:"You stayed calm and composed even when customers put you under the toughest pressure. No matter how intense things got, you never passed it on to the team. You stood in front of us and shielded us. Working under your leadership taught me what real leadership looks like, and I am truly grateful.",
     extra:[] }
 ];
 
 /* Colleagues. Copy a block to add one. */
 const COLLEAGUES = [
-  { name:"Lithiya Williams", role:"The Kiddo", photo:"",
+  { name:"Lithiya Williams", role:"The Kiddo · Always a favourite", photo:"",
     message:"Thank you for being a wonderful colleague, my Kiddo.",
-    thanks:"It was a pleasure working with you. Thank you for the friendship and the good times we shared.",
+    thanks:"You were the first person to come up and ask me, “Are you Tamil?”, and that one question started our friendship. Your cheerful nature made every day brighter, and you will always be a favourite. Thank you for the friendship and the good times we shared.",
+    extra:[] },
+  { name:"Naveen", role:"The first “Vidu, paathukalam” friend", photo:"",
+    message:"Thank you for the confidence that whatever happens, we will handle it.",
+    thanks:"You were the first friend to tell me, “Vidu, paathukalam”. Let it go, we will take care of it. Whatever came our way, that calm confidence came from you, and it carried me through many tough days. I am truly grateful.",
+    extra:[] },
+  { name:"Jeevakanth", role:"The little one who keeps running", photo:"",
+    message:"Thank you for reminding me to keep moving, no matter what.",
+    thanks:"You always believed that nothing changes just by worrying, and that whatever happens, we have to keep running. That simple, steady attitude kept me going more often than you know. Thank you, my friend.",
+    extra:[] },
+  { name:"Tharun Shankar", role:"The quiet problem-solver", photo:"",
+    message:"Thank you for sitting with every problem until it was solved.",
+    thanks:"You were the one who would sit down calmly and work through any problem until it was solved. You have now moved on to a new path, and I am sure you will solve every challenge there just as patiently. Wishing you the very best.",
+    extra:[] },
+  { name:"Raghul", role:"From IT to a bigger dream", photo:"",
+    message:"Thank you for showing me what determination looks like.",
+    thanks:"You started in IT and went through many struggles, yet you never gave up. Today you are pursuing your dream of becoming a government officer. Your journey inspires me, and I wish you every success in that aspiration.",
+    extra:[] },
+  { name:"Madankumar", role:"The kind soul behind the screen", photo:"",
+    message:"Thank you for letting your work speak for itself.",
+    thanks:"You were always behind the screen, quietly getting the work done, never showing off. Your humility and kindness made you someone everyone respected. It was a pleasure working with you.",
+    extra:[] },
+  { name:"Pravinkumar", role:"My Sithappu · Close to my heart", photo:"",
+    message:"Thank you for being my Sithappu, always close to my heart.",
+    thanks:"You started with ABAP, explored APO and have now moved into Security. Watching you learn and reinvent yourself has been inspiring. More than a colleague, you are family to me, and I am grateful for every moment we shared.",
+    extra:[] },
+  { name:"Mohammed Asif", role:"Room-mate · Tea buddy · More than a friend", photo:"",
+    message:"Thank you for turning a stranger into family.",
+    thanks:"At first, we honestly felt you were not one of us. Then, slowly, the conversations began. You became my room-mate, then my friend, and now you are much more than that. Here is to many more cups of tea together, my tea buddy.",
+    extra:[] },
+  { name:"GnanavelNathan (Vicky)", role:"Madurai Boyz · Tea anytime", photo:"",
+    message:"Thank you for being more than a friend, Madurai Boy.",
+    thanks:"You were always disciplined with finances, and you were always just a call away for a cup of tea, any time of the day. You are more than a friend to me. Madurai Boyz forever!",
+    extra:[] },
+  { name:"Swathi S", role:"The mature one in the group", photo:"",
+    message:"Thank you for showing us how to plan life with clarity.",
+    thanks:"You were the most mature person in our group. You planned your career and your life thoughtfully, and you showed the rest of us the value of thinking ahead. I truly admire that.",
+    extra:[] },
+  { name:"Madhumitha", role:"The Chennai girl · Always on the move", photo:"",
+    message:"Thank you for the plans, the outings and the energy.",
+    thanks:"A true Chennai girl, you were always exploring, roaming and planning the next outing. Your energy made our group livelier, and I am thankful for all the memories.",
+    extra:[] },
+  { name:"Deepika (Tom)", role:"The ABAPer from day one", photo:"",
+    message:"Thank you for being our go-to ABAPer, Tom.",
+    thanks:"You were an ABAPer from day one and the go-to person whenever we needed help. No matter how much we teased you, you never let it bother you. Thank you for your patience and your good nature.",
+    extra:[] },
+  { name:"Deepika (Jerry)", role:"Short, sweet and our angry bird", photo:"",
+    message:"Thank you for keeping us in line, Jerry.",
+    thanks:"Short, sweet and our very own angry bird. You are a family girl at heart and always taught us how to behave. Thank you for your care and for every laugh we shared.",
     extra:[] }
 ];
 
+/* Special one. */
+const SPECIAL = [
+  { name:"Alagar Sanjeev", role:"My special one · A soul I can rely on", photo:"",
+    message:"Thank you for being beyond a friend, beyond a colleague.",
+    thanks:"We were introduced in college, and we joined LTI together on the very same day. Today you are at SAP Labs India, and I am so proud of you. Through LTI I came to know the person you truly are. You are a soul I can rely on any day, any time, the one I can talk to about my deepest insecurities. Thank you for always being there.",
+    extra:[["I still remember","Joining LTI together on the same day. It was the start of a journey I will always treasure."]] }
+];
 /* Teams and projects. Copy a block to add one. */
 const PROJECTS = [
   { name:"The ALNG Implementation Team", initials:"AL", role:"Implementation team", photo:"",
     message:"Thank you for treating every one of us like family.",
-    thanks:"Every member of the team stood by the others and never let anyone down. It was a joy to work with you, and I will miss it.",
+    thanks:"Every member of this team stood by one another and never let anyone down. Working with you was a true joy, and I will genuinely miss those days.",
     extra:[] },
   { name:"The Carrier Team", initials:"CR", role:"Rollouts & Carveouts", photo:"",
     message:"Thank you for being my Pune family.",
-    thanks:"Our team was reshuffled and streamlined, and once we got to know one another, we delivered successfully, even ahead of time. You will always be my Pune family.",
+    thanks:"Our team was reshuffled and restructured, yet once we got to know one another, we came together and delivered successfully, even ahead of schedule. You will always be my Pune family.",
     extra:[] }
 ];
 /* ===== END EDIT SECTION ===== */
@@ -285,7 +345,8 @@ function render(list, gridId, offset){
 render(PEOPLE, "grid", 0);
 render(MANAGERS, "gridM", PEOPLE.length);
 render(COLLEAGUES, "gridC", PEOPLE.length + MANAGERS.length);
-render(PROJECTS, "grid2", PEOPLE.length + MANAGERS.length + COLLEAGUES.length);
+render(SPECIAL, "gridS", PEOPLE.length + MANAGERS.length + COLLEAGUES.length);
+render(PROJECTS, "grid2", PEOPLE.length + MANAGERS.length + COLLEAGUES.length + SPECIAL.length);
 
 function openCard(p,i){
   fillAvatar($("d-avatar"),p,i);
