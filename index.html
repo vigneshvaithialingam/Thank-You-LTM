@@ -106,6 +106,16 @@ footer p{margin:0 0 14px;color:var(--muted)}
     <div class="grid" id="grid"></div>
   </section>
   <section class="sec">
+    <h2>Managers</h2>
+    <p class="sub">The leaders who guided and supported my work.</p>
+    <div class="grid" id="gridM"></div>
+  </section>
+  <section class="sec">
+    <h2>Colleagues</h2>
+    <p class="sub">The friends who shared the journey with me.</p>
+    <div class="grid" id="gridC"></div>
+  </section>
+  <section class="sec">
     <h2>Projects</h2>
     <p class="sub">The teams I was lucky to work with.</p>
     <div class="grid" id="grid2"></div>
@@ -201,6 +211,22 @@ const PEOPLE = [
     extra:[["I still remember","The early days at the BorgWarner client, when we worked together in the war room. That Ganesh was different from the Ganesh I know today."]] }
 ];
 
+/* Managers. Copy a block to add one. */
+const MANAGERS = [
+  { name:"Chandrasekar Raman", role:"Cool Manager", photo:"",
+    message:"Thank you for being such a cool manager.",
+    thanks:"It was a pleasure working with you, and I am grateful for your support as my manager.",
+    extra:[] }
+];
+
+/* Colleagues. Copy a block to add one. */
+const COLLEAGUES = [
+  { name:"Lithiya Williams", role:"The Kiddo", photo:"",
+    message:"Thank you for being a wonderful colleague, my Kiddo.",
+    thanks:"It was a pleasure working with you. Thank you for the friendship and the good times we shared.",
+    extra:[] }
+];
+
 /* Teams and projects. Copy a block to add one. */
 const PROJECTS = [
   { name:"The ALNG Implementation Team", initials:"AL", role:"Implementation team", photo:"",
@@ -257,7 +283,9 @@ function render(list, gridId, offset){
   });
 }
 render(PEOPLE, "grid", 0);
-render(PROJECTS, "grid2", PEOPLE.length);
+render(MANAGERS, "gridM", PEOPLE.length);
+render(COLLEAGUES, "gridC", PEOPLE.length + MANAGERS.length);
+render(PROJECTS, "grid2", PEOPLE.length + MANAGERS.length + COLLEAGUES.length);
 
 function openCard(p,i){
   fillAvatar($("d-avatar"),p,i);
