@@ -87,7 +87,17 @@ footer p{margin:0 0 14px;color:var(--muted)}
   .d-body{padding:6px 18px 22px}
   .btn{flex:1 1 100%;text-align:center}
 }
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (prefers-reduced-motion:reduce){*:not(.heart):not(.mini-heart){animation:none!important;transition:none!important}}
+.special-link{display:inline-block;margin:0 0 18px;font:700 .95rem "Trebuchet MS",system-ui,sans-serif;color:var(--ink);text-decoration:none;background:var(--gold);padding:8px 16px;border-radius:999px;box-shadow:0 0 0 4px rgba(242,177,52,.25)}
+.special-note{position:relative;margin-top:48px;padding:clamp(26px,5vw,44px);border-radius:22px;background:linear-gradient(135deg,#fff7e3 0%,#ffe9b8 100%);border:2px solid var(--gold);box-shadow:0 0 0 6px rgba(242,177,52,.18),0 18px 50px rgba(15,42,67,.18);color:#0f2a43;text-align:center;animation:glow 3.5s ease-in-out infinite alternate}
+@keyframes glow{from{box-shadow:0 0 0 6px rgba(242,177,52,.18),0 18px 50px rgba(15,42,67,.18)}to{box-shadow:0 0 0 10px rgba(242,177,52,.32),0 18px 60px rgba(242,177,52,.35)}}
+.special-note .heart{display:inline-block;font-size:3rem;line-height:1;margin-bottom:10px;color:#e0245e;text-shadow:0 0 18px rgba(224,36,94,.45);animation:breathe 1.6s ease-in-out infinite;transform-origin:center}
+@keyframes breathe{0%{transform:scale(1)}14%{transform:scale(1.28)}28%{transform:scale(1)}42%{transform:scale(1.22)}70%,100%{transform:scale(1)}}
+.special-link .mini-heart{display:inline-block;color:#e0245e;animation:breathe 1.6s ease-in-out infinite;margin-right:4px}
+.special-note h2{font-size:clamp(1.8rem,4.5vw,2.4rem);margin:0 0 18px;letter-spacing:-.01em}
+.special-note p{font:italic 1.15rem/1.75 Georgia,serif;margin:0 auto 14px;max-width:680px}
+.special-note .sig{font:1.3rem Georgia,serif;font-style:normal;margin-top:20px}
+@media (prefers-color-scheme:dark){.special-note{background:linear-gradient(135deg,#3a2c0c 0%,#5a4210 100%);color:#fff4dc}.special-note .heart{color:#ffb38a}}
 </style>
 </head>
 <body>
@@ -99,6 +109,7 @@ footer p{margin:0 0 14px;color:var(--muted)}
 
   <ol class="timeline" id="timeline"></ol>
 
+  <a class="special-link" href="#special-note"><span class="mini-heart">&#10084;</span> Read my special note from the heart</a>
   <p class="hint">Select a name to read my personal note.</p>
   <section class="sec">
     <h2>My Gurus</h2>
@@ -121,9 +132,24 @@ footer p{margin:0 0 14px;color:var(--muted)}
     <div class="grid" id="gridS"></div>
   </section>
   <section class="sec">
+    <h2>People</h2>
+    <p class="sub">The groups who made the journey richer.</p>
+    <div class="grid" id="gridG"></div>
+  </section>
+  <section class="sec">
     <h2>Projects</h2>
     <p class="sub">The teams I was fortunate to be part of.</p>
     <div class="grid" id="grid2"></div>
+  </section>
+
+  <section class="special-note" id="special-note">
+    <div class="heart">&#10084;</div>
+    <h2>A Special Note</h2>
+    <p>If your name is not on this page, please do not think I have forgotten you. Every single person I met on this journey has a place in my heart, and that place will never fade. Some names may be missing from these cards, but none of you are missing from my memories.</p>
+    <p>Saying goodbye is far harder than I ever imagined. My eyes may be filled as I write this, but my heart is full of gratitude. Every lesson, every laugh, every late night and every cup of tea made me who I am today.</p>
+    <p>This goodbye is only a small pause, not an ending. The world is smaller than we think, and I truly believe our paths will cross once again.</p>
+    <p>Until then, thank you, from the bottom of my heart.</p>
+    <p class="sig">With love and gratitude,<br>Vignesh</p>
   </section>
 
   <footer>
@@ -217,7 +243,11 @@ const PEOPLE = [
   { name:"Ganesh Swaminathan", role:"Solution Guru · PP", photo:"",
     message:"Thank you for your insights, and for pushing me to aim higher.",
     thanks:"You generously share your insights about the market and constantly motivate me to do meaningful work and achieve more. Your encouragement means a lot to me, and I am truly grateful.",
-    extra:[["I still remember","The early days at BorgWarner, working side by side in the war room. The Ganesh I met there was very different from the Ganesh I know today, and I value both."]] }
+    extra:[["I still remember","The early days at BorgWarner, working side by side in the war room. The Ganesh I met there was very different from the Ganesh I know today, and I value both."]] },
+  { name:"Vijay Sonavane", role:"Team Lead", photo:"",
+    message:"Thank you for teaching me to listen first.",
+    thanks:"You guided me to listen first before anything else. I may not have fully mastered it yet, but the life lessons you shared will help me avoid repeating the same mistakes. I will carry your guidance with me throughout my career, and I am truly grateful.",
+    extra:[] }
 ];
 
 /* Managers. Copy a block to add one. */
@@ -325,6 +355,50 @@ const COLLEAGUES = [
   { name:"Saravanakumar", role:"MM expert · Grows by growing others", photo:"",
     message:"Thank you for lifting juniors as you grew.",
     thanks:"You were always enthusiastic about teaching juniors, and you made their growth part of your own. That generous mindset helped so many of us, me included. Thank you for everything you taught me.",
+    extra:[] },
+  { name:"Rohit Kulkarni", role:"Trip planner · Surprise visitor", photo:"",
+    message:"Thank you for the trips, the surprise visits and the calm you bring.",
+    thanks:"You are our trip planner and the master of surprise visits. Cool, calm and composed, you are young at heart yet carry a maturity well beyond your years. Every moment with you has been a memory worth keeping.",
+    extra:[] },
+  { name:"Manikandan", role:"From PMO to MM · My life adviser", photo:"",
+    message:"Thank you for every piece of life advice.",
+    thanks:"You are the person behind every piece of life advice I needed, always clear about what has to be done. I truly admire your move from PMO to MM. Taking on that challenge at your level of experience, and facing every struggle head on, took real courage. You inspire me.",
+    extra:[] },
+  { name:"Rohan Jineshwar Chougule", role:"AI expert · The unbeatable ABAPer", photo:"",
+    message:"Thank you for always going the extra mile for the team.",
+    thanks:"An unbeatable ABAPer and now an AI expert, you always take complete ownership of your work and willingly go the extra mile for the team. Your commitment sets an example for all of us. It has been a privilege working alongside you.",
+    extra:[] },
+  { name:"Archana Krishna Kumar", role:"A friend to cherish", photo:"",
+    message:"Thank you for being a friend I will always cherish.",
+    thanks:"You are a friend from the team whom I will always cherish. Thank you for your kindness, your support and the good moments we shared along the way.",
+    extra:[] },
+  { name:"Janardhanan Muthukrishnan", role:"My elder brother and guide", photo:"",
+    message:"Thank you for being the brother I can always turn to.",
+    thanks:"Whenever I ran into a problem, whether in life or at work, you were always there to guide me like an elder brother. Your advice and support have meant more to me than words can say. I am truly grateful.",
+    extra:[] },
+  { name:"Rakesh Prasad", role:"My late-night exploration partner", photo:"",
+    message:"Thank you for backing my enthusiasm, even late at night.",
+    thanks:"Whenever my enthusiasm kicked in late at night, you were right there, supporting me to explore and learn more. That encouragement kept my curiosity alive, and I am truly grateful.",
+    extra:[] },
+  { name:"Prasanna Radhakrishnan", role:"The man behind the words", photo:"",
+    message:"Thank you for pushing me to evolve.",
+    thanks:"You are the man behind the words, the one who always pushed me to evolve and become better. Your encouragement helped me grow in ways I did not expect. Thank you.",
+    extra:[] },
+  { name:"Gowthami KrishnareddyGari", role:"My early support partner", photo:"",
+    message:"Thank you for supporting me in my early support days.",
+    thanks:"You supported me through my early days in support work, when everything was still new to me. Your help made that learning curve much easier. It was a real pleasure working with you.",
+    extra:[] },
+  { name:"Renuka Gopalan", role:"My support pillar · Travel guru", photo:"",
+    message:"Thank you for being my support pillar, then and now.",
+    thanks:"You were my support pillar during the Carrier days, and you are still my go-to person for travel advice and so much more. Thank you for always being there.",
+    extra:[] },
+  { name:"Manisha Vishwanath Prajapati", role:"Our Didi", photo:"",
+    message:"Thank you for being there through every late night, Didi.",
+    thanks:"You were behind all those late nights and extended hours, always by our side until the work was done. Thank you for your support, your care and your patience, Didi.",
+    extra:[] },
+  { name:"Bezawada Praveen Kumar", role:"My phone-call companion · One of a kind", photo:"",
+    message:"Thank you for every phone call, every rant and every life lesson.",
+    thanks:"I still remember the days we started ranting to each other over the phone about workload, stress and everything life threw at us. Those calls turned into some of my most valuable life lessons. You are truly one of a kind, a special person in the whole of LTI, and I am grateful our paths crossed.",
     extra:[] }
 ];
 
@@ -333,7 +407,26 @@ const SPECIAL = [
   { name:"Alagar Sanjeev", role:"My special one · A soul I can rely on", photo:"",
     message:"Thank you for being beyond a friend, beyond a colleague.",
     thanks:"We were introduced in college, and we joined LTI together on the very same day. Today you are at SAP Labs India, and I am so proud of you. Through LTI I came to know the person you truly are. You are a soul I can rely on any day, any time, the one I can talk to about my deepest insecurities. Thank you for always being there.",
-    extra:[["I still remember","Joining LTI together on the same day. It was the start of a journey I will always treasure."]] }
+    extra:[["I still remember","Joining LTI together on the same day. It was the start of a journey I will always treasure."]] },
+  { name:"Abirathi M", role:"The gem I found at LTI", photo:"",
+    message:"Thank you for being a soul I can share anything with, without ever feeling judged.",
+    thanks:"In my early days at LTI, we hardly spoke. Over the past two years, though, you have become one of my support pillars. You are a soul I can share anything with, without ever feeling judged, and that is a rare and precious thing. You are truly the gem I found at LTI, and I am grateful for you every day.",
+    extra:[] }
+];
+/* People groups. */
+const GROUPS = [
+  { name:"Junior Gang", initials:"JG", role:"Innovation Campus", photo:"",
+    message:"You are still amazing. Let’s stay in touch.",
+    thanks:"You are all still amazing. Keep in touch, and keep learning from every tough situation. Each challenge will shape you into a better consultant, and I cannot wait to see how far you go.",
+    extra:[] },
+  { name:"Senior Gang", initials:"SG", role:"The seniors who mentored me", photo:"",
+    message:"Thank you for guiding us from day one.",
+    thanks:"Sivan, Kavipriya, Pravin, Ram, Roshini, Jayaprakash Anna and many others, you took the time to look after us when we joined as GETs. You treated us well and guided us onto a great path. I am deeply grateful to every one of you.",
+    extra:[] },
+  { name:"Pune People", initials:"PU", role:"My Pune family", photo:"",
+    message:"Thank you for the Pune days I still miss.",
+    thanks:"You have my wholehearted gratitude. I still miss those days, the time we spent together and all our adventures exploring Pune. Those memories will always stay with me.",
+    extra:[] }
 ];
 /* Teams and projects. Copy a block to add one. */
 const PROJECTS = [
@@ -344,7 +437,15 @@ const PROJECTS = [
   { name:"The Carrier Team", initials:"CR", role:"Rollouts & Carveouts", photo:"",
     message:"Thank you for being my Pune family.",
     thanks:"Our team was reshuffled and restructured, yet once we got to know one another, we came together and delivered successfully, even ahead of schedule. You will always be my Pune family.",
-    extra:[["Renuka Gopalan · The sweet ABAPer","Always eager to explore new things and never hesitant to teach. Thank you for your patience and for everything you shared with me."],["Rohit Kulkarni · Calm and composed","The cool guy who stayed calm and composed no matter what came our way. Your steady presence kept the whole team grounded."],["Manisha · Our Didi","Our FICO consultant and our Didi. Thank you for your guidance, your care and for looking out for all of us."]] }
+    extra:[["Renuka Gopalan · The sweet ABAPer","Always eager to explore new things and never hesitant to teach. Thank you for your patience and for everything you shared with me."],["Rohit Kulkarni · Calm and composed","The cool guy who stayed calm and composed no matter what came our way. Your steady presence kept the whole team grounded."],["Manisha · Our Didi","Our FICO consultant and our Didi. Thank you for your guidance, your care and for looking out for all of us."]] },
+  { name:"The Phinia Team", initials:"PH", role:"Everyone I met at Phinia", photo:"",
+    message:"Thank you, Phinia team. You will always have a special place in my heart.",
+    thanks:"I may miss a few names, but everyone I met at Phinia, Dyneshwari, Prasanna, Girish and the Junior Gang including Vaishnavi, Nithya Shree, Ponezhil and Venkat Ramana, along with the Bangalore team, means a lot to me. I am intentionally not naming everyone, as I would not want to leave anyone out. You will always have a special place in my heart.",
+    extra:[] },
+  { name:"The AdvanSix Team", initials:"AX", role:"Where I learned something new", photo:"",
+    message:"Thank you for helping me learn and grow, together.",
+    thanks:"You gave me the chance to learn something new every day. Whatever I become from here will be the result of our efforts together. Thank you for being part of my journey.",
+    extra:[] }
 ];
 /* ===== END EDIT SECTION ===== */
 
@@ -394,7 +495,8 @@ render(PEOPLE, "grid", 0);
 render(MANAGERS, "gridM", PEOPLE.length);
 render(COLLEAGUES, "gridC", PEOPLE.length + MANAGERS.length);
 render(SPECIAL, "gridS", PEOPLE.length + MANAGERS.length + COLLEAGUES.length);
-render(PROJECTS, "grid2", PEOPLE.length + MANAGERS.length + COLLEAGUES.length + SPECIAL.length);
+render(GROUPS, "gridG", PEOPLE.length + MANAGERS.length + COLLEAGUES.length + SPECIAL.length);
+render(PROJECTS, "grid2", PEOPLE.length + MANAGERS.length + COLLEAGUES.length + SPECIAL.length + GROUPS.length);
 
 function openCard(p,i){
   fillAvatar($("d-avatar"),p,i);
